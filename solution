@@ -2,6 +2,7 @@
 mkdir dec27
 
 cd dec27
+
 2. Display the contents of friends.txt on the console
 touch friends.txt
 ls -l
@@ -17,6 +18,7 @@ cat homies.txt
 4. Make a copy of homies.txt under the name humans.txt
 cp homies.txt humans.txt
 ls -l
+
 5. List all files whose name begins with letter 'h' and ends with extension txt
 grep -i h h*.txt
 ls -l
