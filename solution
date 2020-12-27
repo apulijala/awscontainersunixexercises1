@@ -1,0 +1,3 @@
+echo "rao" >> friends1.txt; echo "natraj" >> friends1.txt
+echo "andrew" >> friends1.txt 
+cat friends1.txt 
