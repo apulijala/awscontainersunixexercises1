@@ -1,0 +1,133 @@
+1. Create a file friends.txt with a list of names of three of your friends on separate lines
+vi friends.txt
+debasis
+niranjan
+raghu
+
+2. Display the contents of friends.txt on the console
+cat friends.txt
+
+3. Rename file friends.txt to homies.txt
+mv friends.txt homies.txt
+
+4. Make a copy of homies.txt under the name humans.txt
+cp homies.txt humans.txt
+
+5. List all files whose name begins with letter 'h' and ends with extension txt
+ls h*.txt
+
+6. Write a command that will tell you how many bytes  are taken up by file humans.txt
+du -sk humans.txt
+
+7. Create file cars.txt with a list of 5 brands of cars on separate lines
+
+8. Check how many bytes are taken up by the file
+du -sk cars.txt
+
+9. Copy the file cars.txt into directory /tmp
+[ec2-user@ip-172-31-80-142 ~]$ cp cars.txt /tmp
+[ec2-user@ip-172-31-80-142 ~]$ cd /tmp/
+[ec2-user@ip-172-31-80-142 tmp]$ ls -ltr cars.txt
+-rw-rw-r-- 1 ec2-user ec2-user 28 Dec 27 10:21 cars.txt
+[ec2-user@ip-172-31-80-142 tmp]$
+
+10. List all files with extension *.txt in directory /tmp and verify that the file was copied properly.
+[ec2-user@ip-172-31-80-142 tmp]$ find . -type f -name "*.txt"
+find: ‘./systemd-private-fbacc86a9f1549b0b6ef296e2c1f5262-chronyd.service-wZErzX’: Permission denied
+./cars.txt
+
+
+11. Without leaving your home directory rename file cars.txt located in /tmp to vehicles.txt in /tmp
+mv /tmp/cars.txt /tmp/vehicles.txt
+
+12. Concatenate the contents of files 'cars.txt' and 'humans.txt' into file 'carsandhumans.txt'
+cat cars.txt humans.txt >> carsandhumans.txt
+
+13. Create directory 'series3'.
+[ec2-user@ip-172-31-80-142 ~]$ mkdir series3
+
+
+14. Move files cars.txt and humans.txt into directory 'series3'
+[ec2-user@ip-172-31-80-142 ~]$ mv cars.txt humans.txt series3
+
+
+15. List contents of 'series3' directory in details.
+[ec2-user@ip-172-31-80-142 series3]$ ls -ltr
+total 8
+-rw-rw-r-- 1 ec2-user ec2-user 23 Dec 27 10:15 humans.txt
+-rw-rw-r-- 1 ec2-user ec2-user 28 Dec 27 10:19 cars.txt
+
+16. Search the web or use manual page by issuing: man cp on how to copy a directory with all its contents.
+man cp
+
+17. In one commandls make a copy of directory 'series3' and all its contents under name 'series3copy'.
+[ec2-user@ip-172-31-80-142 ~]$  cp -R series3 series3copy
+
+18. List contents of series3 and series3copy directories in two separate commands to verify copying was successful.
+cp -R series3 series3copy
+
+
+19. How do you get to the home folder from anywhere
+[ec2-user@ip-172-31-80-142 series3copy]$ cd ~
+
+20. Change directory to /etc but using RELATIVE path only, in one command.
+[ec2-user@ip-172-31-80-142 ~]$ cd /tmp/
+
+21. Display the contents of 'passwd' file on the screen.
+[ec2-user@ip-172-31-80-142 tmp]$ cat /etc/passwd
+
+22. Display the contents of 'passwd' file on the screen interactively (so you can search, scroll up and down)
+[ec2-user@ip-172-31-80-142 tmp]$ cat /etc/passwd |more
+
+23. Change directory to /var/log but using RELATIVE path only, in one command (assuming you're in etc)
+[ec2-user@ip-172-31-80-142 tmp]$ cd /var/log
+[ec2-user@ip-172-31-80-142 log]$
+
+24. Display the contents of 'syslog' file on the screen interactively (so you can search, scroll up and down)
+dmesg | less
+
+25. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
+[root@ip-172-31-80-142 log]# cp syslog /home/ec2-user
+
+26. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
+27. What is the contents or purpose of /etc? - Three things
+28. What is the contents or purpose of /var? - 4 examples
+29. What is the contents or purpose of /home?
+30. What is the contents or purpose of /mnt?
+31. Give a list of 4 main directories that contain executable files.
+32. What is the path to the main/default log file used by the operating system?
+33.Sort /etc/passwd using the uid (first field) as the key. (sort)
+[root@ip-172-31-80-142 ec2-user]# awk -F ':' '{print$1,$3}' /etc/passwd
+root 0
+bin 1
+daemon 2
+adm 3
+lp 4
+sync 5
+shutdown 6
+halt 7
+mail 8
+operator 11
+games 12
+ftp 14
+nobody 99
+systemd-network 192
+dbus 81
+rpc 32
+libstoragemgmt 999
+sshd 74
+rpcuser 29
+nfsnobody 65534
+ec2-instance-connect 998
+postfix 89
+chrony 997
+rngd 996
+tcpdump 72
+ec2-user 1000
+[root@ip-172-31-80-142 ec2-user]#
+
+
+
+
+
+
