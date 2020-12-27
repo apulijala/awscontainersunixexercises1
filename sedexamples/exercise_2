@@ -1,0 +1,12 @@
+1. After fifth line insert Text called “After fifth line” 
+	sed  -e '5 a\After fifth line \
+	second fifth line' lines
+
+
+2. Before Eights line insert text called “before 8th line”
+	sed -e '8 i\
+Before Eighth line' lines
+
+3. Replace lines 3 to 6 with text saying lines 3 to lines 6 replaced. 
+sed -e '3,6 c\
+lines 3 to 6 to be replaced' lines
