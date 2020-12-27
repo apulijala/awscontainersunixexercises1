@@ -1,0 +1,21 @@
+1. Save lines 2 to 4 and 5 to 7 in a single file. 
+ sed -e '2,4 w single' -e '5,7 w single' lines
+vefiriation 
+cat lines 
+
+2. 
+initial verification of command. 
+sed -E 's/sentence/line' lines
+
+actual command. 
+sed -E 's/sentence/line/w sentence' lines
+
+2a) all lines other than those modified should also be saved. 
+
+
+
+3. Save files other than between 3 to 7 to not_3_to_7. 
+sed -e '3,7 !w 3_to_7'  lines
+Verification 
+cat 3_to_7
+
