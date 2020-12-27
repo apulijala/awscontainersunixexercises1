@@ -86,5 +86,5 @@ cp syslog systemlog.txt
 31. Give a list of 4 main directories that contain executable files.
 32. What is the path to the main/default log file used by the operating system?
 33.Sort /etc/passwd using the uid (first field) as the key. (sort)
-sort /etc/pass | awk '{print $1}'
+sort /etc/passwd | awk '{print $1}'
 
