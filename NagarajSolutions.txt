@@ -4,20 +4,24 @@ debasis
 niranjan
 raghu
 
+My comment is try to use "echo"
+
 2. Display the contents of friends.txt on the console
-cat friends.txt
+cat friends.txt (correct)
 
 3. Rename file friends.txt to homies.txt
-mv friends.txt homies.txt
+mv friends.txt homies.txt (correct)
+verify ls
 
 4. Make a copy of homies.txt under the name humans.txt
-cp homies.txt humans.txt
+cp homies.txt humans.txt (correct)
 
 5. List all files whose name begins with letter 'h' and ends with extension txt
 ls h*.txt
 
 6. Write a command that will tell you how many bytes  are taken up by file humans.txt
-du -sk humans.txt
+du -sk humans.txt (valid, prefer to use ls as du has not been taught yet and try to get the correct using the --help 
+or man page)
 
 7. Create file cars.txt with a list of 5 brands of cars on separate lines
 
@@ -30,25 +34,27 @@ du -sk cars.txt
 [ec2-user@ip-172-31-80-142 tmp]$ ls -ltr cars.txt
 -rw-rw-r-- 1 ec2-user ec2-user 28 Dec 27 10:21 cars.txt
 [ec2-user@ip-172-31-80-142 tmp]$
+good 
 
 10. List all files with extension *.txt in directory /tmp and verify that the file was copied properly.
 [ec2-user@ip-172-31-80-142 tmp]$ find . -type f -name "*.txt"
 find: ‘./systemd-private-fbacc86a9f1549b0b6ef296e2c1f5262-chronyd.service-wZErzX’: Permission denied
 ./cars.txt
-
+good in a way it will all cars.txt in multiple directories, but if only /tmp has to be verified better to use ls. 
 
 11. Without leaving your home directory rename file cars.txt located in /tmp to vehicles.txt in /tmp
-mv /tmp/cars.txt /tmp/vehicles.txt
+mv /tmp/cars.txt /tmp/vehicles.txt good
 
 12. Concatenate the contents of files 'cars.txt' and 'humans.txt' into file 'carsandhumans.txt'
-cat cars.txt humans.txt >> carsandhumans.txt
+cat cars.txt humans.txt >> carsandhumans.txt prefer to use > rather than append so any pervious things won't be therre. 
 
 13. Create directory 'series3'.
-[ec2-user@ip-172-31-80-142 ~]$ mkdir series3
+[ec2-user@ip-172-31-80-142 ~]$ mkdir series3 correct
 
 
 14. Move files cars.txt and humans.txt into directory 'series3'
-[ec2-user@ip-172-31-80-142 ~]$ mv cars.txt humans.txt series3
+[ec2-user@ip-172-31-80-142 ~]$ mv cars.txt humans.txt series3/ / will say it is a directory and if directory is not present, it 
+will fail, othewise a file will be created. 
 
 
 15. List contents of 'series3' directory in details.
@@ -62,13 +68,21 @@ man cp
 
 17. In one commandls make a copy of directory 'series3' and all its contents under name 'series3copy'.
 [ec2-user@ip-172-31-80-142 ~]$  cp -R series3 series3copy
+cp -R series3/ series3copy
 
 18. List contents of series3 and series3copy directories in two separate commands to verify copying was successful.
 cp -R series3 series3copy
 
+ls -l series3
+ls -l series3copy
+
+to compare two directories use 
+diff series3 series3copy. if the directoreis are identical you will not see any output. 
+
+
 
 19. How do you get to the home folder from anywhere
-[ec2-user@ip-172-31-80-142 series3copy]$ cd ~
+[ec2-user@ip-172-31-80-142 series3copy]$ cd ~, cd (without any parameters)
 
 20. Change directory to /etc but using RELATIVE path only, in one command.
 [ec2-user@ip-172-31-80-142 ~]$ cd /tmp/
@@ -77,17 +91,24 @@ cp -R series3 series3copy
 [ec2-user@ip-172-31-80-142 tmp]$ cat /etc/passwd
 
 22. Display the contents of 'passwd' file on the screen interactively (so you can search, scroll up and down)
-[ec2-user@ip-172-31-80-142 tmp]$ cat /etc/passwd |more
+[ec2-user@ip-172-31-80-142 tmp]$ cat /etc/passwd |more ( | usually slows down the command) 
+
+more/less /etc/passwd
+my mistake was
+cat /etc/passwd | grep "hello" prefer to do grep "hello" /etc/passwd
 
 23. Change directory to /var/log but using RELATIVE path only, in one command (assuming you're in etc)
 [ec2-user@ip-172-31-80-142 tmp]$ cd /var/log
 [ec2-user@ip-172-31-80-142 log]$
+cd ../var/log 
 
 24. Display the contents of 'syslog' file on the screen interactively (so you can search, scroll up and down)
 dmesg | less
 
 25. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
-[root@ip-172-31-80-142 log]# cp syslog /home/ec2-user
+[root@ip-172-31-80-142 log]# cp syslog /home/ec2-user (this will have a file called /home/ec2-user/syslog)
+
+cp syslog /home/ec2-user/systemlog.txt
 
 26. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
 27. What is the contents or purpose of /etc? - Three things
@@ -98,6 +119,13 @@ dmesg | less
 32. What is the path to the main/default log file used by the operating system?
 33.Sort /etc/passwd using the uid (first field) as the key. (sort)
 [root@ip-172-31-80-142 ec2-user]# awk -F ':' '{print$1,$3}' /etc/passwd
+awk -F ':' '{print$1,$3}' /etc/passwd | sort -k 2n (Final command is choosing 2 as the key and n as the number)
+
+sort -t ":" -k 3n /etc/passwd 
+
+Verified it by extracting the third column and sending to awk. 
+sort -t ":" -k 3n /etc/passwd | awk -F ":" '{print $3}'
+
 root 0
 bin 1
 daemon 2
