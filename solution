@@ -1,3 +1,90 @@
-echo "rao" >> friends1.txt; echo "natraj" >> friends1.txt
-echo "andrew" >> friends1.txt 
-cat friends1.txt 
+1. Create a file friends.txt with a list of names of three of your friends on separate lines
+mkdir dec27
+
+cd dec27
+
+2. Display the contents of friends.txt on the console
+touch friends.txt
+ls -l
+vi friends.txt
+cat friends.txt
+
+3. Rename file friends.txt to homies.txt
+mv friends.txt homies.txt
+ls -l
+cat homies.txt
+
+
+4. Make a copy of homies.txt under the name humans.txt
+cp homies.txt humans.txt
+ls -l
+
+5. List all files whose name begins with letter 'h' and ends with extension txt
+grep -i h h*.txt
+ls -l
+6. Write a command that will tell you how many bytes  are taken up by file humans.txt
+wc -c humans.txt
+7. Create file cars.txt with a list of 5 brands of cars on separate lines
+touch cars.txt
+vi cars.txt
+cat cars.txt
+8. Check how many bytes are taken up by the file
+wc -c cars.txt
+9. Copy the file cars.txt into directory /tmp
+cp cars.txt /tmp
+
+10. List all files with extension *.txt in directory /tmp and verify that the file was copied properly.
+find /tmp -type f
+
+11. Without leaving your home directory rename file cars.txt located in /tmp to vehicles.txt in /tmp
+mv /tmp/cars.txt /tmp/vehicles.txt
+
+12. Concatenate the contents of files 'cars.txt' and 'humans.txt' into file 'carsandhumans.txt'
+cat cars.txt humans.txt >> carsandhumans.txt
+ls -lR
+cat carsandhumans.txt
+
+13. Create directory 'series3'.
+mkdir series3
+
+14. Move files cars.txt and humans.txt into directory 'series3'
+mv cars.txt humans.txt series3/
+
+15. List contents of 'series3' directory in details.
+ls -lR series3/
+
+16. Search the web or use manual page by issuing: man cp on how to copy a directory with all its contents.
+cp --help
+
+17. In one commandls make a copy of directory 'series3' and all its contents under name 'series3copy'.
+cp -r series3/ series3copy
+
+18. List contents of series3 and series3copy directories in two separate commands to verify copying was successful.
+ls -lR series3copy/
+19. How do you get to the home folder from anywhere
+cd ~
+20. Change directory to /etc but using RELATIVE path only, in one command.
+cd /etc
+21. Display the contents of 'passwd' file on the screen.
+cat /etc/passwd
+22. Display the contents of 'passwd' file on the screen interactively (so you can search, scroll up and down)
+cat /etc/passwd | more
+
+23. Change directory to /var/log but using RELATIVE path only, in one command (assuming you're in etc)
+cd /var/log
+
+24. Display the contents of 'syslog' file on the screen interactively (so you can search, scroll up and down)
+cat syslog
+25. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
+cp syslog systemlog.txt
+
+26. Copy file 'syslog' to your home directory under the name 'systemlog.txt' using path relative to home directory, in one command.
+27. What is the contents or purpose of /etc? - Three things
+28. What is the contents or purpose of /var? - 4 examples
+29. What is the contents or purpose of /home?
+30. What is the contents or purpose of /mnt?
+31. Give a list of 4 main directories that contain executable files.
+32. What is the path to the main/default log file used by the operating system?
+33.Sort /etc/passwd using the uid (first field) as the key. (sort)
+sort /etc/passwd | awk '{print $1}'
+

@@ -1,0 +1,38 @@
+curl -sSL https://www.upriss.org.uk/perlcgi/alice.txt -o alice.txt
+ls
+cat a
+cat alice.txt 
+grep "q" alice.txt 
+grep "^q" alice.txt 
+grep "th" alice.txt 
+grep "[qQ]" alice.txt 
+grep "[\*]" alice.txt 
+grep "\*" alice.txt 
+grep "[ae]" alice.txt 
+grep "^[^a]" alice.txt 
+grep "^[^a|e]" alice.txt 
+grep "^[^e]" alice.txt 
+grep "^[^e]" "e" alice.txt 
+grep "^[^e]" "a" alice.txt 
+grep "[aeiou]" alice.txt 
+grep "[aei]" alice.txt 
+grep "[and]" alice.txt 
+grep "{and}" alice.txt 
+grep "[Bar|Baz]" alice.txt 
+grep "apple pie]" alice.txt 
+cat alice.txt 
+vi alice.txt 
+grep "apple pie" alice.txt 
+grep "[apple pie]" alice.txt 
+grep "apple pie" alice.txt 
+grep "apple pie" "banana pie"alice.txt 
+grep "apple pie" "banana pie" alice.txt 
+grep "[apple pie | banana pie]" alice.txt 
+grep "pie$]" alice.txt 
+grep "pie$" alice.txt 
+grep "a.pie$" alice.txt 
+grep "pie$" alice.txt 
+grep --help
+grep "bo.*bo" alice.txt 
+grep " alice.txt 
+grep -E '(..).*\1' alice.txt 
