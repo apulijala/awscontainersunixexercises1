@@ -1,0 +1,6 @@
+1. Write a sed command that copies a file to standard output, removing all lines that begin with the word Today. Make it case insensitive. 
+
+2. Write a sed command that copies only those lines of a file that begin with the word Today to standard output.
+
+3. Write a sed command that copies a file to standard output, removing all blank lines (i.e., lines with no characters on them).
+

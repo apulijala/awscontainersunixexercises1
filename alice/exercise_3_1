@@ -1,0 +1,1 @@
+5) Write a replace statement that deletes all HTML markup from a file. You need non-greedy multipliers because otherwise the text between tags may be deleted in a line that contains several tags.

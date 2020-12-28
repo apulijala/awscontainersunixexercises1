@@ -1,0 +1,6 @@
+/\bcat(s?)\b/I  i\
+This line will be replaced 
+/\bcat(s?)\b/I  s/cat(s*)/dog\1/g
+/\bcat(s?)\b/I  s/CAT(s|S*)/DOG\1/g
+/\bcat(s?)\b/I  s/Cat(s|S*)/Dog\1/g
+

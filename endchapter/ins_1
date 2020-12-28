@@ -1,0 +1,4 @@
+/\bcat(s?)\b/I  i\
+This line will be replaced 
+/\bcat(s?)\b/I  s/[[:lower:]]/[[:upper:]]/g
+

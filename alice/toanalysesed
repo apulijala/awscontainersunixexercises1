@@ -1,0 +1,413 @@
+curl -sSL -o alice.txt https://www.upriss.org.uk/perlcgi/alice.txt
+cat alice
+cat alice.txt 
+c
+cat alice.txt 
+sed -n '/the/ p' alice.txt 
+sed -n '/the/ p' alice.txt
+sed -n '/the\b/ p' alice.txt
+c
+sed -n '/the\b/ xp' alice.txt
+sed -n '/the\b/ !x d' alice.txt
+sed -n '/the\b/ x!d' alice.txt
+sed -n '/the\b/ ! px ' alice.txt
+sed -n '/the\b/ ! p' alice.txt
+c
+sed -n '/the\b/ ! p' alice.txt
+sed -n '/the\b/ ! p' alice.txt | grep "the"
+sed -n '/the\b/ ! d' alice.txt | grep "the"
+sed '/the\b/ ! d' alice.txt | grep "the"
+sed -ialice.txt.bak '/the\b/ ! d' alice.txt | grep "the"
+cat alice.txt.bak
+cat alice.txt
+ls
+mv  alice.txtalice.txt.bak  alice.txt.bak
+c
+cat alice.txt.bak 
+mv alice.txt.bak alice.txt
+sed -ialice.txt.bak '/the\b/ ! d' alice.txt | grep "the"
+mv alice.txt.bak alice.txt
+sed  '/the\b/ ! d' alice.txt | grep "the"
+c
+sed  '/the\b/ ! d' alice.txt | grep "the"
+sed  '/the\b/ ! d' alice.txt | grep "the" > only_the
+cat only_the 
+c
+cat only_the 
+ls
+sed -n '/t.*e/ p' alice.txt
+mv alice.txtalice.txt.bak alice.txt
+sed -n '/t.*e/ p' alice.txt
+c
+sed -n '/\bt.*e/ p' alice.txt
+sed -n '/\bt.*e\b/ p' alice.txt
+c
+sed -n '/\bt.*e\b/ p' alice.txt
+sed -n -E '/xx\bt.*e\b/ p' alice.txt
+sed -n -E '/t.*e/ p' alice.txt
+c
+sed -n -E '/the/ p' alice.txt
+sed -n -E '/t.*/ p' alice.txt
+sed -n -E '/t.*e/ p' alice.txt
+sed -n -E '/ t.*e / p' alice.txt
+sed  -E '/ t.*e / p' alice.txt
+sed -n -E '/ t.*e / p' alice.txt
+diff $(sed -n -E '/ t.*e / p' alice.txt) alice.txt 
+diff <(sed -n -E '/ t.*e / p' alice.txt) alice.txt 
+diff <(sed -n -E '/ t.*e / p' alice.txt) cat alice.txt 
+diff <(sed -n -E '/ t.*e / p' alice.txt) <(cat alice.txt)
+c
+diff <(sed -n -E '/ t.*e / p' alice.txt) <(cat alice.txt)
+cat alice
+cat alice.txt 
+sed -n -E '/ t.*e / p' alice.txt
+sed -n -E '\bt.*e\b/ p' alice.txt
+c
+sed -n -E '\bt.*e\b/ p' alice.txt
+sed -n -E '/\bt.*e\b/ p' alice.txt
+vi alice.txt 
+grep -E '/\bt.*e\b/ p' alice.txt
+grep -E '/\bt.*e\b/' alice.txt
+grep -E '/t.*e/' alice.txt
+grep -E 't.*e' alice.txt
+grep -E 't.*e\b' alice.txt
+grep -E '\bt.*e\b' alice.txt
+c
+grep -E '\bt.*e\b' alice.txt
+grep -E '\bthe\b' alice.txt
+grep -E '\bt.*e\b' alice.txt
+grep -E '\bt.*?e\b' alice.txt
+grep -E '\bt.e\b' alice.txt
+c
+grep -E '\bt.e\b' alice.txt
+grep -E '\bt..e\b' alice.txt
+grep -E '\bt...e\b' alice.txt
+grep -E '\bt.+e\b' alice.txt
+grep -E '\bt{3,}e\b' alice.txt
+grep -E '\bt.{3,}e\b' alice.txt
+grep -E '\bt.{3,}?e\b' alice.txt
+c
+grep -E '\bt.{3,}?e\b' alice.txt
+grep -P '\bt.{3,}?e\b' alice.txt
+grep -P '\bt.*e\b' alice.txt
+c
+grep -P '\bt.*e\b' alice.txt
+grep -P '\bt.*?e\b' alice.txt
+grep -P '\bt(?:[a-z]*[a-df-z])?\b alice.txt
+grep -P '\bt(?:[a-z]*[a-df-z])?\b' alice.txt
+grep -P '\bt(?:[a-z]*)?\b' alice.txt
+grep -P '\bt(?:e*)?\b' alice.txt
+grep -P '\bt(?:[a-z]*e)?\b' alice.txt
+c
+grep -P '\bt(?:[a-z]*e)?\b' alice.txt
+grep -P '\bt([a-z]*e)?\b' alice.txt
+c
+grep -P '\bt([a-z]*e)?\b' alice.txt
+c
+grep -P '\bt([a-z]*e)?\b' alice.txt
+grep -P '\bt([a-z]*e)\b' alice.txt
+grep -P '\bt[a-z]*e\b' alice.txt
+grep -P '\bt.*e\b' alice.txt
+grep -P '\bt[a-z]*e\b' alice.txt
+c
+grep -P '\bt[a-z]*e\b' alice.txt
+grep -P -i '\bt[a-z]*e\b' alice.txt
+c
+grep -P -i '\bt[a-z]*e\b' alice.txt
+grep -P -i '\bt[a-z]{3,}e\b' alice.txt
+grep -E -i '\bt[a-z]{3,}e\b' alice.txt
+sed -E -i '\bt[a-z]{3,}e\b' alice.txt
+sed -E  '\bt[a-z]{3,}e\b' alice.txt
+sed -E  '/\bt[a-z]{3,}e\b/' alice.txt
+c
+sed -E  '/\bt[a-z]{3,}e\b/' alice.txt
+sed -E x '/^a/' alice.txt
+sed -E '/^a/ p ' alice.txt
+sed -E '/^a/ p' alice.txt
+c
+sed -E '/^a/ p' alice.txt
+c
+sed -E '/x^a/ p' alice.txt
+sed -E '/h.*/ p' alice.txt
+sed -E '/a/ p' alice.txt
+c
+sed -E '/a/ p' alice.txt
+sed -n -E '/a/ p' alice.txt
+c
+sed -n -E '/a/ p' alice.txt
+sed -n -E '/^a/ p' alice.txt
+sed -n -E '/^a.*e$/ p' alice.txt
+sed -n -E '/^a.*n$/ p' alice.txt
+sed -n -E '/^$/ p' alice.txt
+c
+history
+grep -P '\bt([a-z]*e)?\b' alice.txt
+grep -P '\bt([a-z]*e)\b' alice.txt
+grep -P '\bt[a-z]*e\b' alice.txt
+grep -P '\bt.*e\b' alice.txt
+grep -P '\bt[a-z]*e\b' alice.txt
+c
+grep -P '\bt[a-z]*e\b' alice.txt
+grep -P -i '\bt[a-z]*e\b' alice.txt
+c
+grep -P -i '\bt[a-z]*e\b' alice.txt
+grep -P -i '\bt[a-z]{3,}e\b' alice.txt
+grep -E -i '\bt[a-z]{3,}e\b' alice.txt
+sed -E -i '\bt[a-z]{3,}e\b' alice.txt
+sed -E  '\bt[a-z]{3,}e\b' alice.txt
+sed -E  '/\bt[a-z]{3,}e\b/' alice.txt
+c
+sed -E  '/\bt[a-z]{3,}e\b/' alice.txt
+sed -E x '/^a/' alice.txt
+sed -E '/^a/ p ' alice.txt
+sed -E '/^a/ p' alice.txt
+c
+sed -E '/^a/ p' alice.txt
+c
+sed -E '/x^a/ p' alice.txt
+sed -E '/h.*/ p' alice.txt
+sed -E '/a/ p' alice.txt
+c
+sed -E '/a/ p' alice.txt
+sed -n -E '/a/ p' alice.txt
+c
+sed -n -E '/a/ p' alice.txt
+sed -n -E '/^a/ p' alice.txt
+sed -n -E '/^a.*e$/ p' alice.txt
+sed -n -E '/^a.*n$/ p' alice.txt
+sed -n -E '/^$/ p' alice.txt
+c
+history
+\ls
+alias grep
+grep --help
+unalias grep
+history | grep "grep"
+grep -E -i '\bt[a-z]{3,}e\b' alice.txt
+grep --color=auto -E -i '\bt[a-z]{3,}e\b' alice.txt
+grep --color=always -E -i '\bt[a-z]{3,}e\b' alice.txt
+c
+grep --color=always -E -i '\bt[a-z]{3,}e\b' alice.txt
+man grep 
+c
+grep --color=always -E -i '\bt[a-z]{3,}e\b' alice.txt
+grep "[A-Z]" alice.txt 
+grep "^[A-Z]" alice.txt 
+c
+grep "^[A-Z]" alice.txt 
+sed "^[A-Z]" alice.txt 
+sed "/^[A-Z]/ p" alice.txt 
+sed -n "/^[A-Z]/ p" alice.txt 
+grep --color=auto "/^[A-Z]/ p" alice.txt 
+grep --color=auto "[A-Z]" alice.txt 
+c
+grep --color=auto "[A-Z]" alice.txt 
+grep --color=auto "^[A-Z]" alice.txt 
+grep --color=always -E -i '\b(t.*?e\b' alice.txt
+grep --color=always -E -i '\b(t.*?e)\b' alice.txt
+grep --color=always -E -i '\b(.*?)\b' alice.txt
+c
+grep --color=always -E -i '\b(.*?)\b' alice.txt
+c
+cd alice/
+c
+ls
+vi questions_2.txt
+cat questions_2.txt 
+ls
+cat questions.txt 
+c
+mv ../alice.txt .
+c
+cat alice.txt 
+sed 's/A/a/g' alice.txt 
+diff <(sed 's/A/a/g' alice.txt) alice.txt 
+sed 's/[[:alpha:]]{3,}/a/g' alice.txt 
+sed 's/\b[[:alpha:]]{3,}//g' alice.txt 
+sed 's/\b[[:alpha:]]{3,}\b//g' alice.txt 
+c
+sed 's/\b[[:alpha:]]{3,}\b//g' alice.txt 
+sed 's/....//g' alice.txt 
+sed 's/\b....//g' alice.txt 
+sed 's/\b....\b//g' alice.txt 
+#sed 's/\b....\b//g' alice.txt 
+sed 's/\b....\b//g' alice.txt 
+sed 's/\b[a-z]{4,}\b//g' alice.txt 
+sed 's/\b[a-z]{3,}\b//g' alice.txt 
+c
+sed 's/\b[a-z]{3,}\b//g' alice.txt 
+sed 's/\b[a-z]{3,3}\b//g' alice.txt 
+c
+sed 's/\b[a-z]{3,3}\b//g' alice.txt 
+sed 's/\b[a-z]{3,}\b//g' alice.txt 
+sed 's/[a-z]//g' alice.txt 
+c
+sed 's/[a-z]//g' alice.txt 
+sed 's/[a-z]{3,}//g' alice.txt 
+sed -E 's/[a-z]{3,}//g' alice.txt 
+sed -E 's/\b[a-z]{3,}//g' alice.txt 
+sed -E 's/\b[a-z]{3,}\b//g' alice.txt 
+sed -E 's/\b[a-zA-Z]{3,}\b//g' alice.txt 
+sed -E 's/\b[a-zA-Z]{4,}\b//g' alice.txt 
+c
+sed -E 's/\b[a-zA-Z]{4,}\b//g' alice.txt 
+sed -E 's/\b[[:alpha:]]{4,}\b//g' alice.txt 
+c
+sed -E 's/\b[[:alpha:]]{4,}\b//g' alice.txt 
+vi exercise_3_1
+curl www.bbc.co.uk
+c
+vi test.thml
+vi test.html
+cat test.html 
+c
+cat test.html 
+sed -E 's/\<.*?\> test.html
+sed -E 's/\<.*?\>' test.html
+sed -E 's/\<.*?\>//' test.html
+c
+cat test.html 
+sed -E 's/<.*>//' test.html
+sed -E 's/<.*?>//' test.html
+c
+sed -E 's/<.*?>//' test.html
+c
+sed -E 's/<.*?>//' test.html
+c
+sed -E 's/<.+?>//' test.html
+c
+sed -E ' /(\b.+?\b)/' test.html
+sed -E '/(\b.+?\b)/' test.html
+sed -E '/(\b.+?\b)/ p' test.html
+sed -E '/<(\b.+?\b)/ p' test.html
+sed -E '/\<(\b.+?\b)/ p' test.html
+c
+sed -E '/\<(\b.+?\b)/ p' test.html
+sed -E '/\<(\b.+?\b)\>/ p' test.html
+sed -E '/\<(\b.+?\b)\>//' test.html
+sed -E 's/\<(\b.+?\b)\>//' test.html
+c
+sed -E 's/\<(\b.+?\b)\>//' test.html
+c
+sed -E 's/\<(\b.+?\b)\>//' test.html
+c
+sed -E 's/\<.*>//' test.html
+c
+sed -E 's/\<.*>//' test.html
+c
+sed -E 's/\<.*\>//' test.html
+sed -E 's/\<[^>]\>//' test.html
+c
+sed -E 's/\<[^>]\>//' test.html
+sed -E 's/\<[^>]*\>//' test.html
+sed -E 's/\<[^>]*\>//g' test.html
+c
+sed 's/<[^>]*>//g'
+sed 's/<[^>]*>//g' test.html 
+cat test.html 
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+sed -E 's/\<[^>]*\>//' test.html
+sed -E 's/\<[^>]*>//' test.html
+sed -E 's/\<[^>]*>//g' test.html
+c
+sed -E 's/\<[^>]*>//g' test.html
+sed -E 's/<[^>]*>//g' test.html
+c
+sed -E 's/<[^>]*>//g' test.html
+c
+sed -E 's/<[^>]*>//g' test.html
+c
+sed -E 's/<[^>]*>//g' test.html
+c
+sed 's/<[^>]*>//g' test.html 
+sed 's/\<[^>]*\>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+sed 's/<[^>]*>//g' test.html 
+c
+cat alice.txt 
+sed -E '/.\. p' alice.txt 
+sed -E '.. p' alice.txt 
+sed -E '/../ p' alice.txt 
+c
+sed -n -E '/../ p' alice.txt 
+grep '/../ p' alice.txt 
+grep --color=auto '/../ p' alice.txt 
+grep --color=auto '.. p' alice.txt 
+grep --color=auto '..' alice.txt 
+grep --color=auto '.\1' alice.txt 
+grep --color=auto '(.)\1' alice.txt 
+grep --color=auto -E '(.)\1' alice.txt 
+c
+grep --color=auto -E '(.)\1' alice.txt 
+sed -E '(.)\1' alice.txt 
+sed -E 'x\(.\)\1' alice.txt 
+sed -E '/(.\)x/1' alice.txt 
+sed -E '/(.\)1 p' alice.txt 
+sed -E '/(.\)\1 p' alice.txt 
+sed -E '/(.)\1 p' alice.txt 
+sed -E '/(.)\1/ p' alice.txt 
+c
+sed -E '/(.)\1/ p' alice.txt 
+sed -n -E '/(.)\1/ p' alice.txt 
+c
+sed -n -E '/(.)\1/ p' alice.txt 
+sed -n -E '/(.)\1/\( p' alice.txt 
+sed -n -E '/(.)\1/\(/ p' alice.txt 
+sed -n -E 's/(.)\1/\(/ p' alice.txt 
+sed -n -E 's/(.)\1/\(&\)/ p' alice.txt 
+c
+sed -n -E 's/(.)\1/\(&\)/ p' alice.txt 
+sed -n -E 's/(.)\1/(&\)/ p' alice.txt 
+c
+sed -n -E 's/(.)\1/(&\)/ p' alice.txt 
+sed -E '/(.\)1 p' alice.txt 
+sed -n -E 's/(.)\1/\(&\)/ p' alice.txt 
+sed -n -E 's/\(.\)\1/\(&\)/ p' alice.txt 
+sed -n -E 's/((.)\1/\(&\)/ p' alice.txt 
+sed -n -E 's/(.)\1/\(&\)/ p' alice.txt 
+c
+sed -n -E 's/(.)\1/\(&\)/ p' alice.txt 
+cd ..
+;s
+ls
+mkdir tdlp
+cd tdlp/
+c
+ls
+ls /usr/bin/
+c
+ls /usr/bin/*
+c
+ls /usr/bin/* 
+c
+ls /usr/bin/* 
+c
+ls /usr/bin/* 
+c
+ls
+ls /usr/bin/
+history
+cd ..
+c
+ls
+cd sedexamples/
+c
+ls
+cd ..
+cd alice/
+ls
+cat exercise_3_1 
+c
+history

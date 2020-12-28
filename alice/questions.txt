@@ -1,0 +1,44 @@
+1) delete all lines from alice.txt that do not contain /the /. Retrieve all lines that contain "the" with lower or upper case letters. Save it to file called only_the 
+
+solution is 
+verified with this command. 
+sed -n '/the\b/ ! p' alice.txt # \b makes sure it is the and not there are. 
+sed -n '/the\b/ ! d' alice.txt | grep "the" # verified the deletion and grep "the" did not return resutls. 
+finally wrote teh results
+sed  '/the\b/ ! d' alice.txt | grep "the" > only_the
+cat only_the
+
+
+2) a) Retrieve lines that contain a word of any length that starts with t and ends with e. Modify this so that the word has at least three characters.
+
+sed -n -E '/\bt.*e\b/ p' alice.txt # this is wrong as white space is also matched. 
+sed -E  '/\bt[a-z]*e\b/' alice.txt
+sed -E -i '\bt[a-z]{3,}e\b' alice.txt# this is the correct one. 
+
+
+b) Retrieve lines that start with a. Retrieve lines that start with a and end with n. Hint: You need to specify the beginning of the line, "a", any number of any characters in the middle, "n", end of line.
+
+sed -E '/^a/ p ' alice.txt
+
+c) Retrieve blank lines. Think of at least two ways of doing this.
+sed -n -E '/^$/ p' alice.txt
+
+
+d) Retrieve lines that contain a word that starts with an uppercase letter.
+grep --color=auto "^[A-Z]" alice.txt 
+
+
+3) What is the difference between the following expressions?
+a) abc* and (abc)*
+ab followed by zeror or more c's and second  is zero or more of abc's . 
+
+b) !preg_match("/yes/"...) and /[^y][^e][^s]/
+
+c) [A-Z][a-z]* and [A-Z][a-z]+
+Capital followed by or or more small letters, second is capital followed by one or more small letters
+
+
+
+
+
+
