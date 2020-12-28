@@ -1,0 +1,4 @@
+I have multiple files that contain ascii text information in the first 5-10 lines, followed by well-tabulated matrix information. 
+In a shell script, I want to remove these first few lines of text so that I can use the pure matrix information in another program. 
+How can I use bash shell commands to do this?
+How do I delete the first n lines of an ascii file using shell commands?

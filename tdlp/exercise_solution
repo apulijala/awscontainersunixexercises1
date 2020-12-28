@@ -1,0 +1,14 @@
+1) Delete the first 3 lines of each temporary file. 
+sed  -s '1,3 d' file* # when it is any other operaton than print don't use -n option as 
+it will eat it. 
+
+2) Print to standard output only the lines containing the pattern "an".
+sed   -n -s '/an/ p' file* -n option has to be used as it will be /an/
+
+
+
+3) A long listing of the root directory, /, is used for input. Create a file holding sed commands that check for symbolic links and plain files. If a file is a symbolic link, precede it with a line like "--This is a symlink--". If the file is a plain file, add a string on the same line, adding a comment like "<--- this is a plain file".
+
+ls -l / |  sed -e '/^l/ i\This is symbolic link' -e '/^-/ i\This is a simple file'
+-e lets u type a combination of address and a command. 
+
