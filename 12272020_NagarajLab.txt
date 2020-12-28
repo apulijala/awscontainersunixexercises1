@@ -1,0 +1,166 @@
+Exercises
+
+Create a file called todo below
+
+Pay fine $99.32
+Coat to dry cleaners [open 9-6]
+
+* Buy oats
+Friday: Take out garbage
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+
+Match the lines having words at.
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "at" todo.txt
+Coat to dry cleaners [open 9-6]
+* Buy oats
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+
+grep  at result.txt
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "at" todo.txt > results.txt
+
+match lines with dry
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "dry" todo.txt
+Coat to dry cleaners [open 9-6]
+Saturday: Paint garage door, if dry
+
+Match lines with dry at the end of the line.
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "dry$" todo.txt
+Saturday: Paint garage door, if dry
+
+search for $99
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "\$99" todo.txt
+Pay fine $99.32
+
+search for empty lines. 
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep -n '^$' todo.txt
+3:
+8:
+
+
+search for $ 
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep '\$' todo.txt
+Pay fine $99.32
+
+search for any word containing o and t with any letter in between.
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep -i "o[a-z]" todo.txt
+Coat to dry cleaners [open 9-6]
+* Buy oats
+Friday: Take out garbage
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+
+search for lines containing D or d
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep -i "d" todo.txt
+Coat to dry cleaners [open 9-6]
+Friday: Take out garbage
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+
+Search for lines containing A-Z
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "[A-Z]" todo.txt
+Pay fine $99.32
+Coat to dry cleaners [open 9-6]
+* Buy oats
+Friday: Take out garbage
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+
+search for lines not containing A-Z at the start. 
+grep -v "[A-Z]" todo
+
+search for containing *
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "\*" todo.txt
+* Buy oats
+* Sat: Show kids goat at zoo
+
+search for lines containing garbage garbbage, garbbbbage 
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep 'garbage\|garbbage\|garbbbbage' todo.txt
+Friday: Take out garbage
+
+nagaraj@DESKTOP-QE3TOG6:~/regex$ grep "gar[bb]age" todo.txt
+Friday: Take out garbage
+
+Don’t do it for now./
+Search for lines containing 0 or more 9
+search for lines containing one 9 followed by 0 or more 9.
+search for lines containing two 9's followed by 0 or more 9.
+
+
+
+Murcheson Lumber:10 6' 2x4:$32.91
+Murchesn Lumber:1 lb. nails:$2.14
+Kepler Build-All:8 sheets 4x8 dryawall:34.24
+Krazy Achmed's Paint-It: 2 gallons primer:$15.93
+Krazy Achmed's Paint-It: 4 rolls drywall tape:$8.93
+Kepler Build-All:5 lbs. Dryawall Screns:$8.76
+Mudler's Tool Shack:drywall gun:85.23
+Happy's Hardware Hut:5 gallons drywall mud:$14.29
+
+
+
+1) Write a regex to match all costs.
+2) Write a regix to find all the Murcheson Lumber expenses (Wtih misspellings too)
+3) Wirte a regex to find all of the drywall costs.
+4) wreite a regex to find all nail and screw costs.
+5) Wirte a regix to find all costs < $10.00 and greater than $10.00
+
+Practice exercises
+https://regex.sketchengine.co.uk/ do them.
+
+More practice
+
+https://www.upriss.org.uk/perlcgi/alice.txt use the file here for practice.
+has a 'q'
+starts with a 'q'
+has 'th'
+has an 'q' or a 'Q'
+has a '*' in it
+starts with an 'q' or an 'Q'
+has both 'a' and 'e' in it
+has an 'a' and somewhere later an 'e'
+does not have an 'a'
+does not have an 'a' nor 'e'
+has an 'a' but not 'e'
+has at least 2 consecutive vowels (a,e,i,o,u) like in the word "bear"
+has at least 3 vowels
+has at least 6 characters
+has at exactly 6 characters
+all the words with either 'Bar' or 'Baz' in them
+all the rows with either 'apple pie' or 'banana pie' in them
+for each row print if it was apple or banana pie?
+Bonus: Print if the same word appears twice in the same line
+Bonus: has a double character (e.g. 'oo')
+https://www.upriss.org.uk/perlcgi/alice.txt
+
+
+
+LAB
+
+In this lab, I'm going to challenge you to work with some of the text processing utilities. First, use head and tail to display the fifth line of the file /etc/passwd. 
+Next, use sed to do exactly the same. 
+Following that, use awk in a pipe to filter the first column out of the results of the command ps aux. 
+Then use grep to show the names of all files in /etc that have lines starting with the text 'root'.
+ Use grep to show all lines from all files in /etc that contain exactly three characters. 
+Use grep to find all files that contain the string "alex'. 
+Make sure that "alexander" is not included in the result. Good luck with that.
+
+
+More sed and awk. 
+
+https://www.upriss.org.uk/perlcgi/alice.txt
+1) Retrieve all lines from alice.txt that do not contain /the /. Retrieve all lines that contain "the" with lower or upper case letters.
+2) a) Retrieve lines that contain a word of any length that starts with t and ends with e. Modify this so that the word has at least three characters.
+b) Retrieve lines that start with a. Retrieve lines that start with a and end with n. Hint: You need to specify the beginning of the line, "a", any number of any characters in the middle, "n", end of line.
+c) Retrieve blank lines. Think of at least two ways of doing this.
+d) Retrieve lines that contain a word that starts with an upper case letter.
+3) What is the difference between the following expressions?
+a) abc* and (abc)*
+b) !preg_match("/yes/"...) and /[^y][^e][^s]/
+c) [A-Z][a-z]* and [A-Z][a-z]+
+
+
+https://www.upriss.org.uk/awt/php8.html
+
+https://www.stats.ox.ac.uk/pub/susan/cdt/Exercises.pdf
