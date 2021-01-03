@@ -1,0 +1,64 @@
+Exercises
+Create a file called todo below
+
+Pay fine $99.32
+Coat to dry cleaners [open 9-6]
+
+* Buy oats
+Friday: Take out garbage
+Saturday: Paint garage door, if dry
+* Sat: Show kids goat at zoo
+vi todo
+
+Match the lines having words at.
+grep  at result.txt
+grep "at" todo > result.txt
+
+match lines with dry
+grep "dry" todo
+Match lines with dry at the end of the line.
+grep "dry$" todo
+
+search for $99
+grep "\$99" todo
+
+search for empty lines. 
+grep -n '^$' todo # Good to number . 
+search for $ 
+grep  '\$' todo
+
+search for any word containing o and t with any letter in between.
+--grep -i "o[a-z]t" todo 
+grep  "o[A-Z,a-z]t" todo # very accurate. Try to minimize use of . 
+
+search for lines containing D or d
+grep -i "d" todo
+
+Search for lines containing A-Z
+grep  "[A-Z]" todo
+
+search for lines not containing A-Z at the start. 
+grep -v "[A-Z]" todo
+
+search for containing *
+grep  "\*" todo
+
+search for lines containing gar b age gar bb age, gar bbb age 
+grep "gar[bbbb]age" todo # is worng because [] is a set and not a qunatifier. 
+
+one way is plugin multiple regexes using -e option. 
+grep -e "garb\{1,2\}age" -e "garb\{4,4\}age" todo
+
+or alternatively use | in which case you have to do 
+grep -E "garb{1,2}|b{4,4}age"  todo
+
+or if you want one or more b's  
+grep -E "garb+age"  todo
+
+
+
+
+
+
+
+
