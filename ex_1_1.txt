@@ -1,0 +1,9 @@
+Print lines 1,4. 
+ echo "1,3 p" > program_file
+ sed -n -f program_file  file1 file2
+Print lines 5,7
+ echo "1,3 p" > program_file
+ sed -n -f program_file  file1 file2
+Print lines 1,3 and 6,8 on all files in a directory 
+	sed  -n -s -e '1,3 p' -e '6,8 p' file1 file2
+In the lines file print all  lines that begin with capital T
