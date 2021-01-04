@@ -2,3 +2,7 @@ I have multiple files that contain ascii text information in the first 5-10 line
 In a shell script, I want to remove these first few lines of text so that I can use the pure matrix information in another program. 
 How can I use bash shell commands to do this?
 How do I delete the first n lines of an ascii file using shell commands?
+This is my sed expression .   
+
+This is my sed expression .  2 .  
+This is my sed expression .  4.    
