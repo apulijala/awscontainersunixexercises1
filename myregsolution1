@@ -1,0 +1,62 @@
+curl -sSL https://www.upriss.org.uk/perlcgi/alice.txt -o alice.txt
+ls
+cat a
+cat alice.txt 
+grep "q" alice.txt 
+grep "^q" alice.txt 
+grep "th" alice.txt 
+grep "[qQ]" alice.txt 
+grep "[\*]" alice.txt 
+grep "\*" alice.txt 
+Till above all correct. 
+
+Q. has both 'a' and 'e' in it
+grep "[ae]" alice.txt # this one brings either a or e. 
+A. grep -E 'a.*e|e.*a' alice.txt # this one says first a then e follows or e followed by a. 
+
+
+Q. has an 'a' and somewhere later an 'e'
+grep "^[^a]" alice.txt # Anyline that does not begin with a. 
+A. grep "a.*e" alice.txt  # now it says a followed by zoer or more characters and then an e. 
+
+Q. does not have an 'a'
+grep "^[^a]" alice.txt 
+A. grep "^[^a]*$" alice.txt # Anything other than a for the whole string. 
+
+Q. does not have an 'a' nor 'e'
+grep "^[^e]" "e" alice.txt 
+grep "^[^ea]$"  alice.txt  will match from start to end the whole line. 
+
+Q. has an 'a' but not 'e'
+I am not able to answer it. 
+grep -i -E "^[a-df-z 0-9]*$" alice.txt but this is my best shot. 
+i for case insensitive. 
+
+Q. has at least 2 consecutive vowels (a,e,i,o,u) like in the word "bear"
+grep -E "[aeiou][aeiou]" alice.txt # simple solution. 
+                                   # back refrences cannot be used. 
+
+Q.has at least 3 vowels
+grep "[aeiou]" alice.txt 
+I don't know. 
+
+Q.has at least 6 characters 6 consecutive i can do . I cannot do other. 
+has at exactly 6 characters
+
+Q. all the words with either 'Bar' or 'Baz' in them
+grep -i -E "bar|baz" alice.txt 
+
+Q. all the rows with either 'apple pie' or 'banana pie' in them
+grep -E 'apple pie|banana pie' alice.txt
+
+Q. Bonus: has a double character (e.g. 'oo')
+grep -E '(.)\1' alice.txt . First parantheis capture any character, \1 means 
+exactly the same. 
+
+
+Q. Bonus: Print if the same word appears twice in the same line
+ grep -w -P '(\b\w+?\b).*\1' alice.txt
+
+
+
+

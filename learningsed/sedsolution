@@ -1,0 +1,29 @@
+mkdir learningsed
+
+cd learningsed/
+
+mkdir ex1_1
+
+cd ex1_1/
+
+pwd
+
+cat lines
+
+cat print
+vi print (1,4 p)
+
+sed -n -f print lines 
+
+vi print (5.7 p)
+sed -n -f print lines 
+vi print
+(1,3 p)
+(6, 8 p )
+sed -n -f print lines 
+vi print (/^T/ p)
+sed -n -f print lines 
+sed '3, 5 d' lines
+sed '/is/, /the / d ' lines 
+cat lines 
+sed -n '3, 5 p' lines
