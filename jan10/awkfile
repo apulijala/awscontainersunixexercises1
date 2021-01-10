@@ -3,7 +3,12 @@ BEGIN{
 FS=","
 OFS="\t"
       printf " Make    Model   Year    Miles   Price\n"
-      printf " ______________________________________\n"
+      printf "______________________________________\n"
 }
 
 NR > 3  { print $1,$2,$3,$4,$5} 
+
+END {
+	printf "-------------------\n"
+	printf "End of report\n"
+}
