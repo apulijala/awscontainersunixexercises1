@@ -1,0 +1,26 @@
+BEGIN{
+
+FS=","
+OFS="\t"
+      printf " Make    Model   Year    Miles   Price\n"
+      printf " ______________________________________\n"
+}
+
+{
+	if ($1 ~ /chevy/ ){ 
+
+	$1 = "chevrylet"
+ }
+ 
+print $1,$2,$3,$4,$5
+
+} 
+
+END {
+
+printf " This report completed\n"
+
+}
+
+
+

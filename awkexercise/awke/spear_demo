@@ -1,0 +1,22 @@
+BEGIN{
+OFS ="\t"
+printf "Make    Model   Year    Miles   Price \n"
+printf "_______________________________________\n"
+}
+
+{
+ 
+if ($1 ~ /plym/ )
+
+  $1 = "plymouth"
+else if ($1 ~ /chevy/)
+  $1 = "chevylet"
+
+
+}
+{
+print $1,$2,$3,$4,$5  
+}
+
+
+

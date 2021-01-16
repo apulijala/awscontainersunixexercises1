@@ -1,0 +1,24 @@
+BEGIN{
+OFS ="\t"
+printf "Make    Model   Year    Miles   Price \n"
+printf "_______________________________________\n"
+}
+
+{
+ 
+if ($NF <= 5000 )
+
+  $NF = "Inexpensive"
+else if ($NF > 5000 && $NF < 10000 )
+  $NF = "Expensive"
+else 
+ $NF = "Please ask"
+
+
+}
+{
+print $1,$2,$3,$4,$5  
+}
+
+
+

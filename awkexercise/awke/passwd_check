@@ -1,0 +1,19 @@
+BEGIN{
+FS =":"
+}
+
+{
+ 
+if ($2 ~ /^$/ )
+
+$2 = " has no password"
+else
+$2 = " has passwd"
+
+}
+{
+print $1,$5, "- " $2 
+}
+
+
+

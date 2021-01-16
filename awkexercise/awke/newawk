@@ -1,0 +1,4 @@
+tr -C '[a-zA-Z]' '\n' <sometext | awk {'words[$1]++} END { \
+OFS = "\t" ; for ( word in words ) { \
+printf "%-15s %-10s\n", word, words[word]} }' | sort -k 2nr
+
