@@ -1,0 +1,20 @@
+#!/bin/bash
+
+{
+printf "Records 3 skipped \n"
+}
+
+awk ' FNR == 3 { print } ' numbers
+
+{
+printf "Records 6 skipped \n"
+}
+
+awk ' FNR == 6 { print } ' numbers
+
+{
+printf "Records 11 skipped \n"
+}
+
+awk ' FNR == 11 { print } ' numbers
+

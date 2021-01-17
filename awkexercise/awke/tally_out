@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cat numbers 
+printf "_________________________________\n"
+awk ' {sum+=$1; sum1+=$2; sum2+=$3;sum3+=$4} END {print sum,"\t" sum1, sum2,"\t" sum3 } ' numbers > talloutput
+
+cat talloutput
+
+ 
