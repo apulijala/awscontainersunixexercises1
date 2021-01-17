@@ -3,8 +3,6 @@ BEGIN {
     uid[void]="";
 }
 
-
-
 {   
     if (uid[$3] != ""){
         print $1, "has same uid as", uid[$3], ":UID =", $3 ;

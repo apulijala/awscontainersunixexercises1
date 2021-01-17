@@ -1,0 +1,66 @@
+for(i =1; i <=nfields;i++) {
+        sums[i] += $i;
+        printf "%10.2f", $i > "tally.out" ;
+    }
+
+if syntax
+if (uid[$3] != ""){
+        print $1, "has same uid as", uid[$3], ":UID =", $3 ;
+    }else {
+        uid[$3]=$1;
+    }
+    
+    
+awk condtion examples. 
+Regex example. 
+$0 !~ /^[0-9 \.]*$/ {
+    printf "Records %d skipped\n", NR;
+}
+
+comparision examples. 
+$1 > 5 {
+
+}
+
+string functions. 
+---------------
+
+length example : length($1)
+substr
+substitue with regex sub(
+
+
+General structure of awk. 
+
+BEGIN {
+
+}
+
+{
+
+}
+
+END {
+
+}
+
+special variables 
+FS = Field seperator example FS = ":" will split based on : instead of " "
+OFS = Output field seprator OFS = "\t"
+RS 
+ORS  = output recored separator. 
+
+decaraling associatieve arrays. 
+ sums[i] += $i;
+
+Iterating over associative arrys: 
+ for(i =1; i <=nfields;i++) {
+
+        sums[i] += $i;
+        printf "%10.2f", $i > "tally.out" ;
+
+    }
+    
+    $i will give the field in the file. 
+    where as i will give the numebr of the field but not the actual field. 
+
