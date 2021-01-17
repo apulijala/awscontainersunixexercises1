@@ -3,17 +3,22 @@ FS =":"
 }
 
 {
- 
-if ($2 ~ /^$/ )
 
-$2 = " has no password"
-else
-$2 = " has passwd"
-
+if (uid[$3] != "" ) {
+print $1. " has same uid as ", uid[$3] , "uid = ", $3 ;
+} else { 
+ uid[$3] = $1 
 }
+}
+
 {
-print $1,$5, "- " $2 
+ 
+if ($2 ~ /^$/) {
+if ($5 == "") {
+printf " %-3s has no password \n ", $1 ;
+ } else {
+printf " %-5s(%7s) has no password \n ", $1,$5; 
 }
-
-
+}
+}
 
