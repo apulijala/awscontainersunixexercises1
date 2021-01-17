@@ -1,0 +1,3 @@
+s/\bcat(s?)\b/dog\1/g
+s/\bCat(s?)\b/Dog\1/g
+s/\bCAT(s|S?)\b/DOG\1/g

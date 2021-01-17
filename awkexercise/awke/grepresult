@@ -1,0 +1,4 @@
+smtp		25/tcp		mail
+imap2		143/tcp		imap		# Interim Mail Access P 2 and 4
+mailq		174/tcp			# Mailer transport queue for Zmailer
+qmtp		209/tcp				# Quick Mail Transfer Protocol
