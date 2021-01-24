@@ -1,0 +1,56 @@
+find file foo.txt either dir dir1 and dir2 directory.  In single command. 
+
+find . -name foo.txt
+find ./ -type f -name foo.txt
+
+find files called foo and directories case insensitive match .
+
+find ./ -type f -iname foo.txt
+
+
+find files with either .txt or .html extensions. 
+
+find ./ -type f -name *.txt || .html
+
+
+find files that don't match .html extensions. 
+
+ find ./ -type f -not -name  *.html
+
+
+find files with .txt extension and search for hello and print 5 lines before and 10 lines after. 
+
+ find ./ -type f -name  *.txt | grep "hello" | cat ./dir1/hello.txt | head -5
+
+
+find files with .html extension and change permission on them to 0644
+
+find ./ -type f -name  *.html | chmod 644 *.html
+
+copy all files .html to all directories in dir4 dir5 dir6
+
+cp *.html dir4
+cp *.html dir5
+cp *.html dir6
+
+find ./ -type f -iname  *.html
+
+
+find all files modified in 7 days and within 24 hours and more htan 7 days
+
+find . -type f  -mtime -1 -ls
+
+
+find all files with .html and tar them. 
+
+find . -type f -iname  *.html -exec tar -rvf htmlfiles.tar {} \;
+
+
+find all files 
+
+find . -type f
+
+find files ending in *.tar.gz extenseion with size > 100M and and do a long listing of them and then remove them (seperate comamnd)
+
+findexer]$ find . -type f -name *.tar -ls
+
